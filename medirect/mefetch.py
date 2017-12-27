@@ -155,6 +155,9 @@ class MEFetch(medirect.MEDirect):
         else:
             results = pool.imap_unordered(efetches, chunks)
 
+        # Wait until all is done. 
+        pool.join()
+
         for r in results:
             # remove blank lines and append a single newline
             r = '\n'.join(l for l in r.split('\n') if l.strip()) + '\n'
