@@ -16,7 +16,7 @@ RUN apk add --no-cache  bash \
 
 RUN ln -s /usr/bin/python3 /usr/local/bin/python
 RUN pip3 install pip --upgrade && pip install wheel
-RUN pip3 install wheel \
+RUN pip3 install \
         awscli>=1.15.14 \
         boto3>=1.7.14 \
         numpy>=1.14.2 \
